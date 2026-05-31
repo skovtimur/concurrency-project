@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConcurrencyConsoleProj", "ConcurrencyConsoleProj\ConcurrencyConsoleProj.csproj", "{AF5783D3-0949-4D28-8AAA-D324382BA9F0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConcurrencyApi", "ConcurrencyApi\ConcurrencyApi.csproj", "{93BAF5B8-D346-48C8-96ED-8A7C41CF86FC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AF5783D3-0949-4D28-8AAA-D324382BA9F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF5783D3-0949-4D28-8AAA-D324382BA9F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF5783D3-0949-4D28-8AAA-D324382BA9F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF5783D3-0949-4D28-8AAA-D324382BA9F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93BAF5B8-D346-48C8-96ED-8A7C41CF86FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93BAF5B8-D346-48C8-96ED-8A7C41CF86FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93BAF5B8-D346-48C8-96ED-8A7C41CF86FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93BAF5B8-D346-48C8-96ED-8A7C41CF86FC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

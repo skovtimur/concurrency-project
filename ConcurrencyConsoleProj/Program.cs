@@ -6,6 +6,7 @@
 
 using ConcurrencyConsoleProj.AsyncStreams;
 using ConcurrencyConsoleProj.DataflowCode;
+using ConcurrencyConsoleProj.EventHandlers;
 using ConcurrencyConsoleProj.Shared;
 
 namespace ConcurrencyConsoleProj;
@@ -16,11 +17,12 @@ public static class Program
     {
         AsyncStreams,
         DataflowCode,
+        EventHandlers,
     }
 
     public static async Task Main(string[] args)
     {
-        var whatToDo = WhatToDo.DataflowCode;
+        var whatToDo = WhatToDo.EventHandlers;
         // var orders = OrderFactory.CreateOrders(1000, 0);
 
         switch (whatToDo)
@@ -35,10 +37,26 @@ public static class Program
             case WhatToDo.DataflowCode:
                 var ordersToValidate = new OrdersBackgroundJob()
                     .GetOrdersAsync(limit: 999, pauseMilliseconds: 3, createZeroElement: true);
-                
+
                 await OrderValidator.Validate(ordersToValidate);
                 break;
 
+
+            case WhatToDo.EventHandlers:
+                var player = new Player(100, 100);
+                var uiSystem = new UiSystem();
+                var alliesSystem = new AlliesSystem();
+
+                player.OnDamaged += uiSystem.PrintDamage;
+                player.OnDamaged += uiSystem.PrintGameOverTitle;
+                player.OnDamaged += alliesSystem.AnalyzePlayerNeedAHealer;
+                player.OnDamaged += (sender, eventArgs) => { Logger.Log($"Damage: {eventArgs.Damage}"); };
+
+                player.TakeDamage(15);
+                player.TakeDamage(10);
+                player.TakeDamage(45);
+                player.TakeDamage(41);
+                break;
 
             default:
                 throw new ArgumentOutOfRangeException();

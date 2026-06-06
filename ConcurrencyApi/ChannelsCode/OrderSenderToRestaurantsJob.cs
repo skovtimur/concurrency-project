@@ -1,4 +1,5 @@
 using System.Threading.Channels;
+using ConcurrencyApi.Shared.Dishes;
 
 namespace ConcurrencyApi.ChannelsCode.ChannelReaders;
 
